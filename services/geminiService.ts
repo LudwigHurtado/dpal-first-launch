@@ -6,11 +6,10 @@ import { Category, NftTheme, type Report, IntelItem, type Hero, type TrainingSce
 import { CATEGORIES } from "../constants";
 import { OFFLINE_DIRECTIVES, OFFLINE_INTEL, OFFLINE_TRAINING, OFFLINE_MISSION_TEMPLATES } from "./offlineAiData";
 
-const FLASH_TEXT_MODEL = 'gemini-3-flash-preview'; 
-const IMAGE_GEN_MODEL = 'gemini-2.5-flash-image';
+const FLASH_TEXT_MODEL = 'gemini-1.5-flash';
+const IMAGE_GEN_MODEL = 'gemini-1.5-flash';
 
 const getApiKey = () => import.meta.env.VITE_GEMINI_API_KEY;
-
 
 export type AiErrorType = 'NOT_CONFIGURED' | 'TEMPORARY_FAILURE' | 'RATE_LIMITED';
 
