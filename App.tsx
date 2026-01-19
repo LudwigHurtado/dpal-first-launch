@@ -587,7 +587,6 @@ const App: React.FC = () => {
             onDeleteHeroPersona={handleDeleteHeroPersona}
             onEquipHeroPersona={(pid: string) => setHero((prev) => ({ ...prev, equippedPersonaId: pid }))}
             onGenerateHeroBackstory={async () => {}}
-            onEraseProfile={handleEraseProfile}
             onNavigateToMissionDetail={(m: Mission) => {
               setSelectedMissionForDetail(m);
               setCurrentView('missionDetail');
