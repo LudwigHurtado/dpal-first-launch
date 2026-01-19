@@ -80,7 +80,7 @@ const getInitialHero = (): Hero => safeParse<Hero>(localStorage.getItem(HERO_STO
 const getTestPhaseFlag = (): boolean => {
   const viteEnv = (import.meta as any)?.env || {};
   const raw = viteEnv.VITE_DPAL_TEST_PHASE ?? (globalThis as any)?.process?.env?.DPAL_TEST_PHASE;
-  return String(raw ?? 'true') !== 'false';
+  return String(raw ?? 'false').toLowerCase() === 'true';
 };
 
 const fileToBase64 = (file: File): Promise<string> =>
@@ -363,18 +363,6 @@ const App: React.FC = () => {
     });
   }, []);
 
-  const handleEraseProfile = useCallback(() => {
-    const shouldErase = confirm('Erase local operative profile data and restore baseline settings?');
-    if (!shouldErase) return;
-
-    localStorage.removeItem(HERO_STORAGE_KEY);
-    localStorage.removeItem(TEST_GATE_KEY);
-
-    setHero(INITIAL_HERO_PROFILE);
-    setHeroHubTab('profile');
-
-    alert('Profile erased. Reloading baseline settings.');
-  }, []);
 
   if (isTestPhase && !testGranted) {
     return (
