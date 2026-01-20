@@ -8,7 +8,7 @@ import CollectionCodex from './CollectionCodex';
 import NftMintingStation from './NftMintingStation';
 import StoreView from './StoreView';
 import HeroPersonaManager from './HeroPersonaManager';
-import HeroProfileTab from './HeroProfileTab';
+import { HeroProfileTab } from './HeroProfileTab';
 import TacticalVault from './TacticalVault';
 
 interface HeroHubProps {
